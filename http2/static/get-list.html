@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>List of To-Do Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .task-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .task-description {
+            font-size: 14px;
+            color: #666;
+        }
+        .add-task {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .add-task:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul class="task-list">
+        {{range .Tasks}}
+            <li class="task-item">
+                <div class="task-title">{{ .Title }}</div>
+                <div class="task-description">{{ .Description }}</div>
+            </li>
+        {{end}}
+    </ul>
+    <a href="/add-task" class="add-task">Додати нове завдання</a>
+</body>
+</html>
